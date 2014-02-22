@@ -1,0 +1,12 @@
+[
+{"id":1, "name":"Costa Rica", "qualifyingDate": "2013-09-25", "players": [{"name": "Joel Campbell"}, {"name": "Bryan Ruiz"}]},
+{"id":2, "name":"England", "qualifyingDate": "2013-08-26", "players": [{"name": "Wayne Rooney"}, {"name": "Frank Lampard"}]},
+{"id":3, "name":"Italy", "qualifyingDate": "2013-07-27", "players": [{"name": "Mario Balotelli"}, {"name": "Andrea Pirlo"}]},
+{"id":4, "name":"Uruguay", "qualifyingDate": "2013-06-28", "players": [{"name": "Luis Suarez"}, {"name": "Edinson Cavani"}]},
+{"id":5, "name":"Brasil", "qualifyingDate": "2013-05-29", "players": [{"name": "Neymar"}, {"name": "Dani Alves"}]},
+{"id":6, "name":"Spain", "qualifyingDate": "2013-09-30", "players": [{"name": "Andres Iniesta"}, {"name": "Xabi Alonso"}]},
+{"id":7, "name":"Mexico", "qualifyingDate": "2013-10-25", "players": [{"name": "Giovanni Dos Santos"}, {"name": "Javier Hernandez"}]},
+{"id":8, "name":"USA", "qualifyingDate": "2013-10-26", "players": [{"name": "Jozy Altidore"}, {"name": "Landon Donovan"}]},
+{"id":9, "name":"Argentina", "qualifyingDate": "2013-10-27", "players": [{"name": "Lionel Messi"}, {"name": "Angel Di Maria"}]},
+{"id":10, "name":"Germany", "qualifyingDate": "2013-10-28", "players": [{"name": "Bastian Schweinsteiger"}, {"name": "Philipp Lahm"}]}
+]
