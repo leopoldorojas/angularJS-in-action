@@ -1,0 +1,14 @@
+  <div>
+    <label>Search:</label>
+    <input type="text" ng-model="searchText" />
+    <p>{{searchText}}</p>
+  </div>
+  <div>
+    <table>
+      <tr ng-repeat="team in teams | filter:searchText">
+        <td><a href="#/teams/{{team.id}}">{{team.name}}</a></td>
+        <td>&nbsp; &nbsp;</td>
+        <td>{{team.qualifyingDate | date:'dd/MM/yyyy'}}</td>
+      </tr>
+    </table>
+  </div>

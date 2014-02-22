@@ -1,19 +1,71 @@
 <!doctype html>
-<html ng-app>
+<html ng-app="worldCupApp">
 <head>
   <meta charset="utf-8">
   <title>My First App with AngularJS</title>
 
   <link rel="stylesheet" href="css/app.css">
 
-  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular/angular.min.js"></script>
+  <script src="lib/angular/angular-route.min.js"></script>
 </head>
-<body>
-  <h1>Copa Mundial Brasil 2014</h1>
-  <div>
-    <label>Tu favorito a campeón del mundo es:</label>
-    <input type="text" ng-model="champion" />
-    <p>{{champion}}</p>
-  </div>
+<body ng-controller="TeamsCtrl">
+  <h1>World Cup Brasil 2014</h1>
+
+  <div ng-view></div>
+
+  <script>
+    var app = angular.module('worldCupApp',['ngRoute']);
+
+    app.config(['$routeProvider',
+      function($routeProvider) {
+        $routeProvider.
+          when('/teams', {
+            templateUrl: 'partials/teams.html',
+            controller: 'TeamsCtrl'
+          }).
+          when('/teams/:teamId', {
+            templateUrl: 'partials/team-detail.html',
+            controller: 'TeamDetailCtrl'
+          }).
+          otherwise({
+            redirectTo: '/teams'
+          });
+      }]);
+
+    app.controller('TeamsCtrl',['$scope',function($scope) {
+      $scope.teams = [
+        {"id":1, name:'Costa Rica', qualifyingDate: '2013-09-25', players: [{"name": "Joel Campbell"}, {"name": "Bryan Ruiz"}]},
+        {"id":2, name:'England', qualifyingDate: '2013-08-26', players: [{"name": "EJoel Campbell"}, {"name": "Bryan Ruiz"}]},
+        {"id":3, name:'Italy', qualifyingDate: '2013-07-27', players: [{"name": "IJoel Campbell"}, {"name": "Bryan Ruiz"}]},
+        {"id":4, name:'Uruguay', qualifyingDate: '2013-06-28', players: [{"name": "UJoel Campbell"}, {"name": "Bryan Ruiz"}]},
+        {"id":5, name:'Brasil', qualifyingDate: '2013-05-29', players: [{"name": "BJoel Campbell"}, {"name": "Bryan Ruiz"}]},
+        {"id":6, name:'Spain', qualifyingDate: '2013-09-30', players: [{"name": "SJoel Campbell"}, {"name": "Bryan Ruiz"}]},
+        {"id":7, name:'Mexico', qualifyingDate: '2013-10-25', players: [{"name": "MJoel Campbell"}, {"name": "Bryan Ruiz"}]},
+        {"id":8, name:'USA', qualifyingDate: '2013-10-26', players: [{"name": "USAJoel Campbell"}, {"name": "Bryan Ruiz"}]},
+        {"id":9, name:'Argentina', qualifyingDate: '2013-10-27', players: [{"name": "AJoel Campbell"}, {"name": "Bryan Ruiz"}]},
+        {"id":10, name:'Germany', qualifyingDate: '2013-10-28', players: [{"name": "GJoel Campbell"}, {"name": "Bryan Ruiz"}]},
+      ]
+    }]);
+
+    app.controller('TeamDetailCtrl', ['$scope', '$routeParams', function($scope, $routeParams) {
+
+      var teams = [
+        {"id":1, name:'Costa Rica', qualifyingDate: '2013-09-25', players: [{"name": "Joel Campbell"}, {"name": "Bryan Ruiz"}]},
+        {"id":2, name:'England', qualifyingDate: '2013-08-26', players: [{"name": "EJoel Campbell"}, {"name": "Bryan Ruiz"}]},
+        {"id":3, name:'Italy', qualifyingDate: '2013-07-27', players: [{"name": "IJoel Campbell"}, {"name": "Bryan Ruiz"}]},
+        {"id":4, name:'Uruguay', qualifyingDate: '2013-06-28', players: [{"name": "UJoel Campbell"}, {"name": "Bryan Ruiz"}]},
+        {"id":5, name:'Brasil', qualifyingDate: '2013-05-29', players: [{"name": "BJoel Campbell"}, {"name": "Bryan Ruiz"}]},
+        {"id":6, name:'Spain', qualifyingDate: '2013-09-30', players: [{"name": "SJoel Campbell"}, {"name": "Bryan Ruiz"}]},
+        {"id":7, name:'Mexico', qualifyingDate: '2013-10-25', players: [{"name": "MJoel Campbell"}, {"name": "Bryan Ruiz"}]},
+        {"id":8, name:'USA', qualifyingDate: '2013-10-26', players: [{"name": "USAJoel Campbell"}, {"name": "Bryan Ruiz"}]},
+        {"id":9, name:'Argentina', qualifyingDate: '2013-10-27', players: [{"name": "AJoel Campbell"}, {"name": "Bryan Ruiz"}]},
+        {"id":10, name:'Germany', qualifyingDate: '2013-10-28', players: [{"name": "GJoel Campbell"}, {"name": "Bryan Ruiz"}]},
+      ];
+
+      $scope.teamId = $routeParams.teamId; 
+      $scope.team = {"id":1, name:'Costa Rica', qualifyingDate: '2013-09-25', players: [{"name": "Joel Campbell"}, {"name": "Bryan Ruiz"}]};
+    }]);
+  </script>
 </body>
 </html>
