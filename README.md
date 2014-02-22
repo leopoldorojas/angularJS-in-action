@@ -4,4 +4,4 @@ This repo contains an example AngularJS application that helps to show the basic
 Ideal for newcomers to AngularJS
 
 Created by Arckanto software
-link:http://www.arckanto.com/
+http://www.arckanto.com/

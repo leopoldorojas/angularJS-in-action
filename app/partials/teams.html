@@ -5,7 +5,7 @@
   </div>
   <div>
     <table>
-      <tr ng-repeat="team in teams | filter:{name: searchText}">
+      <tr ng-repeat="team in teams | filter:{name: searchText} | orderBy:'name' ">
         <td><a href="#/teams/{{team.id}}">{{team.name}}</a></td>
         <td>&nbsp; &nbsp;</td>
         <td>{{team.qualifyingDate | date:'dd/MM/yyyy'}}</td>
